@@ -1,0 +1,23 @@
+#list-students{
+    width: 70% ;
+    margin: auto;
+
+}
+#table-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+button[name="edit-button"]{
+    margin-right: 10px;
+}
+.nav{
+    margin-bottom: 10px;
+}
+input{
+    width: 50% !important;
+
+}
+.form-search{
+    justify-content: center;
+
+}
