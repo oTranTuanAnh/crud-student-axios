@@ -6,6 +6,7 @@ import {Route, Routes, Link} from "react-router-dom";
 
 import Navbar from "./component/navbar";
 import Create from "./student/Create";
+import Edit from "./student/Edit";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path="" element={<ListStudent/>} />
                 <Route path="/students/create" element={<Create/>} />
+                <Route path="/students/edit/:id" element={<Edit/>} />
             </Routes>
     </div>
   );

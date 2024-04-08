@@ -19,12 +19,8 @@ const ListStudent = () =>{
 
     const handleSearch = (e) => {
         let key = e.target.value;
-        if (key) {
-            let studentFilter = students.filter(item => item.name.toLowerCase().includes(key.toLowerCase()));
-            let data = studentFilter.length > 0 ? studentFilter : students;
-            setStudentFilters(data)
-        }
-
+        let studentFilter = students.filter(item => item.name.toLowerCase().includes(key.toLowerCase()));
+        key? setStudentFilters(studentFilter) : setStudentFilters(students)
     }
     const deleteStudent = (id)=>{
         console.log(id)
@@ -33,7 +29,6 @@ const ListStudent = () =>{
             setIsDelete(!isDelete)
         })
     }
-
 
     return (
         <>
@@ -68,7 +63,7 @@ const ListStudent = () =>{
                                 <td>{item.description}</td>
                                 <td>{item.score}</td>
                                 <td>
-                                    <button type="button" className="btn btn-secondary" name="edit-button">Edit</button>
+                                    <Link to={"students/edit/"+item.id}><button type="button" className="btn btn-secondary" name="edit-button">Edit</button></Link>
                                     <button type="button" className="btn btn-secondary" name="delete-button" onClick={()=>deleteStudent(item.id)}>Delete
                                     </button>
                                 </td>
